@@ -4,7 +4,7 @@ const app = express()
 const logger = require('morgan')
 let methodOverride = require('method-override')
 
-require('./db/connection')
+
 
 app.set('port', process.env.PORT || 8000);
 //middleware starts here
