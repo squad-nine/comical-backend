@@ -7,5 +7,6 @@ const comicBook = new mongoose.Schema({
     date: Number,
 })
 
+const ComicBook = mongoos.model('ComicBook', comicBook)
 
-module.exports = comicBook
+module.exports = ComicBook
