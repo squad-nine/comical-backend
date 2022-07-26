@@ -5,17 +5,28 @@ const logger = require('morgan')
 let methodOverride = require('method-override')
 
 
+require('dotenv').config()
 
-app.set('port', process.env.PORT || 8000);
+
+const port = process.env.PORT || 3001
+
 //middleware starts here
 app.use(methodOverride('_method'))
+app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use(express.static(path.join(__dirname, 'build')))
 //middlewares end here
 
 //routes start here
-app.set("views", path.join(__dirname,"views"));
 
-app.listen(app.get('port'), () =>{
-    console.log(`✅ PORT: ${app.get('port')} 🌟`);
+
+app.listen((port), () =>{
+    console.log(`✅ PORT: ${(port)} 🌟`);
+})
+
+
+
+app.get('/*', function(req,res){
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
