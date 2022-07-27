@@ -32,11 +32,8 @@ const deleteComic = (req, res) =>{
 
 
 
-
 module.exports = {
     index,
     comicNew,
-    show,
-    create,
     deleteComic
 }
