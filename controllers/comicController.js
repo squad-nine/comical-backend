@@ -21,11 +21,12 @@ const deleteComic = (req, res) =>{
     let { id } = req.params 
     console.log(id)
 
-    ComicBook.findById(req.params.id, (err, comic) =>{
+    ComicBook.findByIdAndDelete(req.params.id, (err, deletedComic) =>{
         if(err){
             res.status(400).json(err)
             return
         }
+        res.json(deletedComic)
     })
 }
 
@@ -35,5 +36,6 @@ const deleteComic = (req, res) =>{
 module.exports = {
     index,
     comicNew,
-    deleteComic
+    deleteComic,
+    showComic
 }
