@@ -8,7 +8,7 @@ const comicBooks = [
     name: "Chamber of Chills",
     published:'',
     condition:'',
-    date: newDate()
+    date: new Date()
 },
 {
     image: "https://comicvine.gamespot.com/a/uploads/scale_small/0/4/17-1497-16-1-journey-into-mystery.jpg",
@@ -16,7 +16,7 @@ const comicBooks = [
     name: "Journey into Mystery",
     published:'',
     condition:'',
-    date: newDate()
+    date: new Date()
   },
 {
     image: "https://comicvine.gamespot.com/a/uploads/scale_small/0/4/18-1433-17-1-spy-cases.jpg",
@@ -24,7 +24,7 @@ const comicBooks = [
     name: "Spy Cases",
     published:'',
     condition:'',
-    date: newDate()
+    date: new Date()
   },
   {
     image: "https://comicvine.gamespot.com/a/uploads/scale_small/0/4/22-989-23-1-blackhawk.jpg",
@@ -32,7 +32,7 @@ const comicBooks = [
     name: "Blackhawk",
     published:'',
     condition:'',
-    date: newDate()
+    date: new Date()
   },
   {
     image: "https://comicvine.gamespot.com/a/uploads/scale_small/0/4/30-1283-31-1-marvel-tales.jpg",
@@ -40,7 +40,7 @@ const comicBooks = [
     name: "Marvel Tales",
     published:'',
     condition:'',
-    date: newDate()
+    date: new Date()
   },
   {
     image: "https://comicvine.gamespot.com/a/uploads/scale_small/0/4/31-1423-32-1-battle.jpg",
@@ -48,7 +48,7 @@ const comicBooks = [
     name: "Battle",
     published:'',
     condition:'',
-    date: newDate()
+    date: new Date()
   },
   {
     image: "https://comicvine.gamespot.com/a/uploads/scale_small/0/4/32-1172-33-1-lone-ranger-the.jpg",
@@ -56,6 +56,6 @@ const comicBooks = [
     name: "The Lone Ranger",
     published:'',
     condition:'',
-    date: newDate()
+    date: new Date()
   }
 ]
