@@ -30,7 +30,14 @@ const deleteComic = (req, res) =>{
     })
 }
 
-
+const showComic = (req,res) => {
+    ComicBook.findById(req.params.id, (err,comic) => {
+        if(err){
+            res.status(400).json(err)
+            return
+        }
+    })
+}
 
 
 module.exports = {
