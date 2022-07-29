@@ -1,8 +1,8 @@
 require('./connection')
 const ComicBook = require('../models/comicBookModel')
 const userProfile = require('../models/userProfileModels')
-const {faker, Faker} = require('@faker-js/faker')
-const { promiseImpl } = require('ejs')
+const {faker} = require('@faker-js/faker')
+
 
 
 
