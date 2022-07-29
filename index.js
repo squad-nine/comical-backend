@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, "build")));
 //middlewares end here
 
 //routes start here
+
 app.use("/api/users", require("./routes/api/userRoutes"));
 app.use("/api/comics", require("./routes/api/comicRoutes"));
 
