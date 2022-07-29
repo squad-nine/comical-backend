@@ -6,7 +6,7 @@ let methodOverride = require('method-override')
 
 
 require('dotenv').config()
-
+require('./Database/connection')
 
 const port = process.env.PORT || 3001
 
