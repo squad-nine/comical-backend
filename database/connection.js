@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const mongoURI = 'mongodb://localhost:27017/comicbackend'
+const mongoURI = process.env.DATABASE_URL
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true

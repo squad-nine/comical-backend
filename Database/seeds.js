@@ -1,8 +1,9 @@
+require("dotenv").config();
+
 require('./connection')
 const ComicBook = require('../models/comicBookModel')
 const userProfile = require('../models/userProfileModels')
 const {faker} = require('@faker-js/faker')
-
 
 
 
