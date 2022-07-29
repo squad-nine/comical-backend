@@ -7,7 +7,7 @@ router.get("/new", comicCtrl.comicNew);
 router.get("/:id", comicCtrl.showComic);
 router.post("/", comicCtrl.deleteComic);
 
-router.use(require("../../Database/auth"));
+router.use(require("../../database/auth"));
 router.post("/", checkAuth, comicCtrl.comicNew);
 
 function checkAuth(req, res, next) {
