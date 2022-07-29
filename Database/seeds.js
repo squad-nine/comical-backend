@@ -1,5 +1,11 @@
 require('./connection')
 const ComicBook = require('../models/comicBookModel')
+const userProfile = require('../models/userProfileModels')
+const {faker} = require('@faker-js/faker')
+
+
+
+
 
 const comicBooks = [
     {
@@ -59,3 +65,34 @@ const comicBooks = [
     date: new Date()
   }
 ]
+
+const users = Array.from({ length: 10 }).map(() => ({
+ username: faker.internet.userName(),
+ email: faker.internet.email(),
+ password: faker.internet.password()
+}));
+
+
+
+Promise.all([ComicBook.deleteMany({}), userProfile.deleteMany({})])
+.then (()=> Promise.all([ComicBook.insertMany(comicBooks), userProfile.insertMany(users)]))
+.then (([insertedcomicBooks, insertedUsers])=>{
+  console.log(insertedcomicBooks, insertedUsers)
+})
+.catch(console.error)
+.finally(()=>{
+  process.exit()
+})
+
+// ComicBook.deleteMany({})
+// .then( () => {
+//     return ComicBook.insertMany(comicBooks)
+// })
+// .then((insertedcomicBooks)=>{
+//     console.log(insertedcomicBooks)
+// })
+// .catch(err => console.error(err)),
+
+
+
+
