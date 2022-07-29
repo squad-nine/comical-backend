@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const comicCtrl = require("../controllers/comicController");
+const comicCtrl = require("../../controllers/comicController");
 
 router.get("/", comicCtrl.index);
 router.get("/new", comicCtrl.comicNew);
 router.get("/:id", comicCtrl.showComic);
 router.post("/", comicCtrl.deleteComic);
 
-router.use(require("../Database/auth"));
+router.use(require("../../Database/auth"));
 router.post("/", checkAuth, comicCtrl.comicNew);
 
 function checkAuth(req, res, next) {
