@@ -8,7 +8,7 @@ const userRoute = require("./routes/api/userRoutes");
 const comicRoute = require("./routes/api/comicRoutes");
 
 require("dotenv").config();
-require("./Database/connection");
+require("./database/connection");
 
 const port = process.env.PORT || 3001;
 
@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, "build")));
 //middlewares end here
 
 //routes start here
+
 app.use("/api/users", require("./routes/api/userRoutes"));
 app.use("/api/comics", require("./routes/api/comicRoutes"));
 
