@@ -10,7 +10,7 @@ require("dotenv").config(); // Dotenv must be loaded before controllers/rotues
 const userRoute = require("./routes/api/userRoutes");
 const comicRoute = require("./routes/api/comicRoutes");
 
-require("./Database/connection");
+require("./database/connection");
 
 const port = process.env.PORT || 3001;
 
@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, "build")));
 //middlewares end here
 
 //routes start here
+
 app.use("/api/users", require("./routes/api/userRoutes"));
 app.use("/api/comics", require("./routes/api/comicRoutes"));
 
