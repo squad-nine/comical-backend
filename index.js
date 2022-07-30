@@ -4,10 +4,12 @@ const app = express();
 const cors = require("cors");
 const logger = require("morgan");
 let methodOverride = require("method-override");
+
+require("dotenv").config(); // Dotenv must be loaded before controllers/rotues
+
 const userRoute = require("./routes/api/userRoutes");
 const comicRoute = require("./routes/api/comicRoutes");
 
-require("dotenv").config();
 require("./Database/connection");
 
 const port = process.env.PORT || 3001;
