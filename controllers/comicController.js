@@ -35,6 +35,8 @@ const showComic = (req,res) => {
         if(err){
             res.status(400).json(err)
             return
+        } else {
+            res.json(comic)
         }
     })
 }
