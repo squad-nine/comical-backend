@@ -42,7 +42,7 @@ const showComic = (req,res) => {
 }
 
 let update = (req,res) => {
-    ComicBook.findByIdAndUpdate(req.params.id,req.body,{new: true}, (err,comic) =>{
+    ComicBook.findByIdAndUpdate(req.params.id,{$set:req.body},{new: true}, (err,comic) =>{
         if(err){
             res.status(400).json(err)
             return
