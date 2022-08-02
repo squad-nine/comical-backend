@@ -41,10 +41,21 @@ const showComic = (req,res) => {
     })
 }
 
+let update = (req,res) => {
+    ComicBook.findByIdAndUpdate(req.params.id,{$set:req.body},{new: true}, (err,comic) =>{
+        if(err){
+            res.status(400).json(err)
+            return
+        }
+        res.json(comic)
+    })
+}
+
 
 module.exports = {
     index,
     comicNew,
     deleteComic,
-    showComic
+    showComic,
+    update
 }
