@@ -5,6 +5,7 @@ const comicCtrl = require("../../controllers/comicController");
 router.get("/", comicCtrl.index);
 router.get("/new", comicCtrl.comicNew);
 router.get("/:id", comicCtrl.showComic);
+router.put('/:id', comicCtrl.update)
 router.post("/", comicCtrl.deleteComic);
 
 router.use(require("../../database/auth"));
