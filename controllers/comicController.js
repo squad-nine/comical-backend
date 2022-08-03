@@ -18,6 +18,7 @@ const comicNew = async (req, res) => {
 const {data} = await axios
     .get("https://comicvine.gamespot.com/api/issues/", {
       params: new URLSearchParams({
+        api_key: process.env.COMICVINE_API_KEY,
         field_list: "image,site_detail_url",
         format: "json",
         filter: `name:${name}`,
