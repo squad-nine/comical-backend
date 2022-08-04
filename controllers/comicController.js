@@ -2,7 +2,8 @@ const ComicBook = require("../models/comicBookModel");
 const axios = require("axios");
 
 const index = (req, res) => {
-  ComicBook.find({}, (err, comics) => {
+  ComicBook.find({owner:req.user._id}, (err, comics) => {
+
     if (err) {
       res.status(400).json(err);
       return;
@@ -28,7 +29,7 @@ const {data} = await axios
     
     const { image, site_detail_url } = data.results[0];
     const { small_url } = image;
-    let newComic = await ComicBook.create({image: small_url, siteUrl: site_detail_url, ...req.body});
+    let newComic = await ComicBook.create({owner:req.user._id,image: small_url, siteUrl: site_detail_url, ...req.body});
     res.json(newComic);
    
 };
