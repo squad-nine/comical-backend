@@ -16,7 +16,7 @@ const comicNew = async (req, res) => {
   console.log(req.body);
   const { name, issueNum } = req.body;
 
-const {data} = await axios
+try{const {data} = await axios
     .get("https://comicvine.gamespot.com/api/issues/", {
       params: new URLSearchParams({
         api_key: process.env.COMICVINE_API_KEY,
@@ -31,7 +31,11 @@ const {data} = await axios
     const { small_url } = image;
     let newComic = await ComicBook.create({owner:req.user._id,image: small_url, siteUrl: site_detail_url, ...req.body});
     res.json(newComic);
-   
+  
+  }catch(error){
+    console.log(error)
+    res.status(400).json(error)
+  }
 };
 
 const deleteComic = (req, res) => {
