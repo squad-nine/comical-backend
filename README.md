@@ -13,15 +13,6 @@ Users will be able to view other users profile without editing their comic books
 The reason why we made this app is to allow people to keep track of their comic books that they own and are able to view a short description of whenever they want to.
 
 
-
-<details>
-
-  <summary>We have routes that will take you to a Login Page, Sign Up Page, your comic book collection, Edit Page.</summary>
-  
-
- 
-</details>
-
 # MVP
 - [x] User can sign up to create an account
 - [x] User can login after making an account
@@ -32,7 +23,7 @@ The reason why we made this app is to allow people to keep track of their comic 
 
 # Technologies used:
 
-- React-Router
+
 - JS / TS, MongoDB, Mongoose, Node.js, Express.js
 
 
