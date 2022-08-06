@@ -41,7 +41,7 @@ async function login(req, res) {
       }
     });
   } catch (err) {
-    return res.status(401).json(err);
+    return 'username/password incorrect';
   }
 }
 
